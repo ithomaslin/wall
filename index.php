@@ -30,7 +30,7 @@ $Wall = new Wall_Updates();
 <div id="wall_container">
 
 <div id="updateboxarea">
-<h4>What's up?</h4>
+<h4>Ask your question...</h4>
 <textarea name="update" id="update" maxlength="200" ></textarea>
 <br />
 
