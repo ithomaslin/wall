@@ -100,7 +100,7 @@ public $perpage = 10; // Uploads perpage
         if ($update!=$result['Question']) {
 		  $uploads_array=explode(',',$uploads);
 		  $uploads=implode(',',array_unique($uploads_array));
-            $query = mysql_query("INSERT INTO `Question` (Question, UserID, ip, created) VALUES (N'$update', '$uid', '$ip','$time')") or die(mysql_error());
+            $query = mysql_query("INSERT INTO `Question` (Question, UserID, created) VALUES (N'$update', '$uid','$time')") or die(mysql_error());
             $newquery = mysql_query("SELECT Q.QuestionID, Q.UserID, Q.Question, Q.created, U.first_name FROM Question Q, fb_login_users U where Q.UserID=U.id and Q.UserID='$uid' order by Q.QuestionID desc limit 1 ");
             $result = mysql_fetch_array($newquery);
 		
