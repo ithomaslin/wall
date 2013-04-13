@@ -15,7 +15,7 @@ $Wall = new Wall_Updates();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Facebook WallScript Version 4.0</title>
+<title>WallPost</title>
 <link href="css/wall.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery.min.js"></script>
  <script type="text/javascript" src="js/jquery.oembed.min.js"></script>
