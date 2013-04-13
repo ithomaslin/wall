@@ -14,10 +14,10 @@ public $perpage = 10; // Uploads perpage
 	  // More Button
        $morequery="";
 		if($lastid)
-		$morequery=" and M.msg_id<'".$lastid."' ";
+		$morequery=" and M.QuestionID<'".$lastid."' ";
 	   // More Button End
 	   
-	    $query = mysql_query("SELECT M.msg_id, M.uid_fk, M.message, M.created, U.username,M.uploads FROM messages M, users U  WHERE M.uid_fk=U.uid and M.uid_fk='$uid' $morequery order by M.msg_id desc limit " .$this->perpage) or die(mysql_error());
+	    $query = mysql_query("SELECT Q.QuestionID, Q.UserID, Q.Question, Q.created, U.username, Q.uploads FROM Question Q, users U  WHERE Q.UserID = U.uid and Q.UserID='$uid' $morequery order by Q.QuestionID desc limit " .$this->perpage) or die(mysql_error());
 		
          while($row=mysql_fetch_array($query))
 		$data[]=$row;
