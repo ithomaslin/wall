@@ -10,13 +10,12 @@ if($updatesarray)
 {
 foreach($updatesarray as $data)
  {
- $msg_id=$data['msg_id'];
- $orimessage=$data['message'];
- $message=tolink(htmlcode($data['message']));
+ $msg_id=$data['QuestionID'];
+ $orimessage=$data['Question'];
+ $message=tolink(htmlcode($data['Question']));
   $time=$data['created'];
  $username=$data['username'];
-  $uploads=$data['uploads'];
- $uid=$data['uid_fk'];
+ $uid=$data['UserID'];
  // User Avatar
  if($gravatar)
  $face=$Wall->Gravatar($uid);
