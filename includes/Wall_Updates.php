@@ -17,7 +17,7 @@ public $perpage = 10; // Uploads perpage
 		$morequery=" and M.QuestionID<'".$lastid."' ";
 	   // More Button End
 	   
-	    $query = mysql_query("SELECT Q.QuestionID, Q.UserID, Q.Question, Q.created, U.username, Q.uploads FROM Question Q, users U  WHERE Q.UserID = U.uid and Q.UserID='$uid' $morequery order by Q.QuestionID desc limit " .$this->perpage) or die(mysql_error());
+	    $query = mysql_query("SELECT Q.QuestionID, Q.UserID, Q.Question, Q.created, U.username FROM Question Q, users U  WHERE Q.UserID = U.uid and Q.UserID='$uid' $morequery order by Q.QuestionID desc limit " .$this->perpage) or die(mysql_error());
 		
          while($row=mysql_fetch_array($query))
 		$data[]=$row;
