@@ -33,20 +33,7 @@ $Wall = new Wall_Updates();
 <h4>What's up?</h4>
 <textarea name="update" id="update" maxlength="200" ></textarea>
 <br />
-<div id="webcam_container" class='border'>
-<div id="webcam" >
-</div>
-<div id="webcam_preview">
 
-</div>
-
-<div id='webcam_status'></div>
-<div id='webcam_takesnap'>
-
-<input type="button" value=" Take Snap " onclick="return takeSnap();" class="camclick button"/>
-<input type="hidden" id="webcam_count" />
-</div>
-</div>
 <div  id="imageupload" class="border">
 <form id="imageform" method="post" enctype="multipart/form-data" action='image_ajax.php'> 
 <div id='preview'>
@@ -59,8 +46,6 @@ $Wall = new Wall_Updates();
 <div style="width:100%;clear:both">
 <input type="submit"  value=" Update "  id="update_button"  class="update_button"/> 
 <span style="float:right">
-<a href="javascript:void(0);" id="camera"><img src="icons/cameraa.png" border="0" title="Upload Image"/></a> 
- <a href="javascript:void(0);" id="webcam_button"><img src="icons/web-cam.png"  border="0" title="Webcam Snap" style='margin-top:5px'/></a>
 </span>
 </div>
 
