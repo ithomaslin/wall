@@ -28,7 +28,7 @@ public $perpage = 10; // Uploads perpage
 	  public function Total_Updates($uid) 
 	{
 	 	   
-	    $query = mysql_query("SELECT M.msg_id, M.uid_fk, M.message, M.created, U.username,M.uploads FROM messages M, users U  WHERE M.uid_fk=U.uid and M.uid_fk='$uid' $morequery order by M.msg_id ") or die(mysql_error());
+	    $query = mysql_query("SELECT Q.QuestionID, Q.UserID, Q.Question, Q.created, U.first_name FROM Question Q, fb_login_users U  WHERE Q.UserID=U.id and Q.UserID='$uid' $morequery order by Q.QuestionID ") or die(mysql_error());
 		$data=mysql_num_rows($query);
         return $data;
 		
