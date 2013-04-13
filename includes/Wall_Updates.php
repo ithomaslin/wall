@@ -94,14 +94,14 @@ public $perpage = 10; // Uploads perpage
 	$update=mysql_real_escape_string($update);
       $time=time();
 	   $ip=$_SERVER['REMOTE_ADDR'];
-        $query = mysql_query("SELECT msg_id,message FROM `messages` WHERE uid_fk='$uid' order by msg_id desc limit 1") or die(mysql_error());
+        $query = mysql_query("SELECT QuestionID, Question FROM `Question` WHERE UserID='$uid' order by QuestionID desc limit 1") or die(mysql_error());
         $result = mysql_fetch_array($query);
 		
-        if ($update!=$result['message']) {
+        if ($update!=$result['Question']) {
 		  $uploads_array=explode(',',$uploads);
 		  $uploads=implode(',',array_unique($uploads_array));
-            $query = mysql_query("INSERT INTO `messages` (message, uid_fk, ip,created,uploads) VALUES (N'$update', '$uid', '$ip','$time','$uploads')") or die(mysql_error());
-            $newquery = mysql_query("SELECT M.msg_id, M.uid_fk, M.message, M.created, U.username FROM messages M, users U where M.uid_fk=U.uid and M.uid_fk='$uid' order by M.msg_id desc limit 1 ");
+            $query = mysql_query("INSERT INTO `Question` (Question, UserID, ip, created) VALUES (N'$update', '$uid', '$ip','$time','$uploads')") or die(mysql_error());
+            $newquery = mysql_query("SELECT Q.QuestionID, Q.UserID, Q.Question, Q.created, U.first_name FROM Question Q, fb_login_users U where Q.UserID=U.id and Q.UserID='$uid' order by Q.QuestionID desc limit 1 ");
             $result = mysql_fetch_array($newquery);
 		
 			 return $result;
