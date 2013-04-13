@@ -1,7 +1,7 @@
 <?php
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'Username');
-define('DB_PASSWORD', 'Password');
+define('DB_SERVER', 'mysql-mastermerit.j.layershift.co.uk');
+define('DB_USERNAME', 'mmview');
+define('DB_PASSWORD', '7AmjYU2FY4THMJz4');
 define('DB_DATABASE', 'wall');
 $connection = mysql_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD) or die(mysql_error());
 $database = mysql_select_db(DB_DATABASE) or die(mysql_error());
