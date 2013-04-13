@@ -14,7 +14,7 @@ foreach($updatesarray as $data)
  $orimessage=$data['Question'];
  $message=tolink(htmlcode($data['Question']));
   $time=$data['created'];
- $username=$data['username'];
+ $username=$data['first_name'];
  $uid=$data['UserID'];
  // User Avatar
  if($gravatar)
