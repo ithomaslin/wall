@@ -1,5 +1,5 @@
  <?php
-//session_start();
-//$uid=$_SESSION['user_id']; 
-$uid=1; // User Session ID static
+session_start();
+$uid=$_SESSION['session']['user_id']; 
+//$uid=1; // User Session ID static
 ?>
