@@ -27,7 +27,7 @@ foreach($updatesarray as $data)
  $link =textlink($orimessage);
 ?>
 <script type="text/javascript"> 
-$(document).ready(function(){$("#stexpand<?php echo $msg_id;?>").oembed("<?php echo  $link; ?>",{maxWidth: 400, maxHeight: 300});});
+$(document).ready(function(){$("#stexpand<?php echo $QuestionID;?>").oembed("<?php echo  $link; ?>",{maxWidth: 400, maxHeight: 300});});
 </script>
 <?php } ?>
 <div class="stbody" id="stbody<?php echo $msg_id;?>">
@@ -36,7 +36,7 @@ $(document).ready(function(){$("#stexpand<?php echo $msg_id;?>").oembed("<?php e
 <img src="<?php echo $face;?>" class='big_face' alt='<?php echo $username; ?>'/>
 </div> 
 <div class="sttext">
-<a class="stdelete" href="#" id="<?php echo $msg_id;?>" title="Delete Update"></a>
+<a class="stdelete" href="#" id="<?php echo $QuestionID;?>" title="Delete Update"></a>
 <b><a href="<?php echo $base_url.$username; ?>"><?php echo $username;?></a></b> <?php echo clear($message);  ?> 
 
 <?php
@@ -53,22 +53,22 @@ echo "<img src='uploads/".$newdata['image_path']."' class='imgpreview'/>";
 echo "</div>";
  }
  ?>
-<div class="sttime"><?php time_stamp($time);?> | <a href='#' class='commentopen' id='<?php echo $msg_id;?>' title='Comment'>Comment </a></div> 
+<div class="sttime"><?php time_stamp($time);?> | <a href='#' class='commentopen' id='<?php echo $QuestionID;?>' title='Comment'>Comment </a></div> 
 <div id="stexpandbox">
-<div id="stexpand<?php echo $msg_id;?>"></div>
+<div id="stexpand<?php echo $QuestionID;?>"></div>
 </div>
-<div class="commentcontainer" id="commentload<?php echo $msg_id;?>">
+<div class="commentcontainer" id="commentload<?php echo $QuestionID;?>">
 <?php
 $x=1;
 include('load_comments.php') ?>
 </div>
-<div class="commentupdate" style='display:none' id='commentbox<?php echo $msg_id;?>'>
+<div class="commentupdate" style='display:none' id='commentbox<?php echo $QuestionID;?>'>
 <div class="stcommentimg">
 <img src="<?php echo $face;?>" class='small_face'/>
 </div> 
 <div class="stcommenttext" >
 <form method="post" action="">
-<textarea name="comment" class="comment" maxlength="200"  id="ctextarea<?php echo $msg_id;?>"></textarea>
+<textarea name="comment" class="comment" maxlength="200"  id="ctextarea<?php echo $QuestionID;?>"></textarea>
 <br />
 <input type="submit"  value=" Comment "  id="<?php echo $msg_id;?>" class="comment_button button"/>
 </form>
